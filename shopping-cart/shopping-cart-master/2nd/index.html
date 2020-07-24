@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container" id="shoppingcart">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto" id="itemswrapper">
+               <div class="cart-item" id="item1">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="decrementItem1" class="btn btn-default item-increment"><i class="fas fa-minus"></i></button>
+                           <input readonly id="quantityOfItem1" type="text" class="form-control text-center" value="1">
+                           <button id="incrementItem1" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$<span id="priceOfItem1">1219</span></h5>
+                        <img id="removeItem1" src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item" id="item2">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="decrementItem2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input readonly id="quantityOfItem2" type="text" class="form-control text-center" value="1">
+                           <button id="incrementItem2" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$<span id="priceOfItem2">59</span></h5>
+                        <img id="removeItem2" src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax (5% of Subtotal):</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="subtotal">0</span></h5>
+                        <h5>$<span id="tax">0</span></h5>
+                        <h5>$<span id="total">0</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button id="checkoutbtn" type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="deliverydetails" class="d-none">
+      <div class="container mt-5">
+         <div class="bg-light p-5">
+            <h2>Fill Delivery Details</h2>
+            <form id="deliveryDetailsForm">
+               <div class="form-group">
+               <label for="formGroupExampleInput">Name</label>
+               <input type="text" class="form-control" id="customerName" placeholder="Enter your Fullname">
+               </div>
+               <div class="form-group">
+                  <label for="formGroupExampleInput2">Email</label>
+                  <input type="text" class="form-control" id="customerEmail" placeholder="Enter Your Email Address">
+               </div>
+               <div class="form-group">
+               <label for="formGroupExampleInput2">Phone Number</label>
+               <input type="text" class="form-control" id="customerPhone" placeholder="Enter your Phone Number">
+               </div>
+               <div class="form-group">
+                  <label for="formGroupExampleInput2">Present Address</label>
+                  <input type="text" class="form-control" id="customerAddress" placeholder="Enter your Present Address">
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-success">Submit And Confirm</button>
+               </div>
+            </form>
+         </div>
+         
+      </div>
+   </section>
+
+   <section id="invoice" class="d-none">
+         <div class="container my-5">
+            <div class=" bg-light p-5">
+            <h2 class="text-center text-success">Your Order is Confirmed</h2>
+            <h4 class="text-center">Order Details</h4>
+            <hr>
+   
+            <div class="customer-details my-5">
+               <h5>Customer Name : <span class="text-secondary" id="showCustomerName"></span> </h5>
+               <h5>Customer Contact No : <span class="text-secondary"  id="showCustomerPhone"></span> </h5>
+               <h5>Customer Email : <span class="text-secondary"  id="showCustomerEmail"></span> </h5>
+               <h5>Delivery Address : <span class="text-secondary"  id="showCustomerAddress"></span> </h5>
+            </div>
+            
+            <div class="card">
+               <div class="card-header">Order Summery</div>
+               <div class="card-body">
+                  <div class="table-responsive">
+                     <table class="table table-condensed">
+                        <thead>
+                           <tr>
+                               <td><strong>Item</strong></td>
+                               <td class="text-center"><strong>Price</strong></td>
+                               <td class="text-center"><strong>Quantity</strong></td>
+                               <td class="text-right"><strong>Totals</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                           <tr id="invoice-item1">
+                              <td>iPhone 11 128GB Black</td>
+                              <td class="text-center">$ <span id="invoice-item-price1">1219</span></td>
+                              <td class="text-center" id="invoice-item-quantity1">1</td>
+                              <td class="text-right">$<span id="invoice-item-total1">1219</span></td>
+                           </tr>     
+                           <tr id="invoice-item2">
+                              <td>iPhone 11 Silicone Case - Black</td>
+                              <td class="text-center">$ <span id="invoice-item-price2">59</span></td>
+                              <td class="text-center" id="invoice-item-quantity2">1</td>
+                              <td class="text-right">$<span id="invoice-item-total2">59</span></td>
+                           </tr>                        
+                           <tr>
+                              <td class="thick-line"></td>
+                              <td class="thick-line"></td>
+                              <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                              <td class="thick-line text-right">$<span id="invoice-subtotal"></span></td>
+                           </tr>
+                           <tr>
+                              <td class="no-line"></td>
+                              <td class="no-line"></td>
+                              <td class="no-line text-center"><strong>tax</strong></td>
+                              <td class="no-line text-right">$<span id="invoice-tax"></span></td>
+                           </tr>
+                           <tr>
+                              <td class="no-line"></td>
+                              <td class="no-line"></td>
+                              <td class="no-line text-center"><strong>Total</strong></td>
+                              <td class="no-line text-right">$<span id="invoice-total">685.99</span></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+   
+         </div>
+</div>
+   </section>
+
+   <script src="script.js"></script>
+</body>
+
+</html>
