@@ -7,6 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
    <link href="style.css" rel="stylesheet">
 </head>
 
@@ -25,11 +26,11 @@
 
                      <div class="col-md-5 col-sm-6 center-item">
                         <div class="input-group number-spinner">
-                           <button id="minusBtn1" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="inputValue1" type="text" class="form-control text-center" value="1">
-                           <button id="plusBtn1" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="phone-decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="phone-count" type="text" class="form-control text-center" value="1">
+                           <button id="phone-increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$ <span id="currentPrice1"> 1219</span> </h5>
+                        <h5>$ <span id="phone-total"> 1219</span> </h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +44,12 @@
                      </div>
                      <div class="col-md-5 col-sm-6 center-item">
                         <div class="input-group number-spinner">
-                           <button id="minusBtn2" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="inputValue2" type="text" class="form-control text-center" value="1">
-                           <button id="plusBtn2" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="case-decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="case-count" type="text" class="form-control text-center" value="1">
+                           <button id="case-increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$ <span id="currentPrice2"> 59</span> </h5>
+                        <h5>$ <span id="case-total"> 59</span> </h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -59,14 +60,14 @@
                      <div class="col-md-8 col-sm-6">
                            <div class="box1">
                               <h5>Subtotal: </h5>
-                              <h5>Tax:</h5>
+                              <h5>Tax _10%:</h5>
                               <h5>Total:</h5>
                            </div>
                      </div>
                      <div class="col-md-4 col-sm-6 ">
                            <div class="box2 status">
-                              <h5 >$ <span id="subtotal">1,278</span></h5>
-                              <h5 >$ <span id="tax"> 0 </span></h5>
+                              <h5 >$ <span id="Sub-total">1,278</span></h5>
+                              <h5>$ <span id="tax"> 128 </span></h5>
                               <h5 >$ <span id="total">1,278</span> </h5>
                            </div>
                      </div>
@@ -93,7 +94,14 @@
 
       </div> <!--/.container-->
    </section>
+   <footer >
+      <div class="footer_text text-center">
+         <p>&copy;2020 SonjoyBarmon All Rights Reserved</p>
+
+      </div>
+   </footer>
    <script src="js/index.js"></script>
 </body>
 
 </html>
+
